@@ -20,13 +20,18 @@
       <div class="col-md-10">
         <!--Body content-->
   
-        <ul>
-          <li ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-            <p>{{user.name}}</p>
-          </li>
-        </ul>
-  
+        <table>
+          <tr ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.registered | datetime }}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.balance | customcurrency}}</td>
+          </tr>
+        </table>
       </div>
+
+     
     </div>
   </div>
   
